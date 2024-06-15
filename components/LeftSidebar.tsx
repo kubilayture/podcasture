@@ -29,7 +29,7 @@ const LeftSidebar = () => {
         {sidebarLinks.map(({ route, label, imgURL }) => {
           const isActive = pathname === route || pathname.startsWith(`${route}/`);
           return (
-            <Link href={route} className={cn("flex gap-3 items-center py-4 max-lg:px-4 justify-center lg:justify-start", {
+            <Link key={route} href={route} className={cn("flex gap-3 items-center py-4 max-lg:px-4 justify-center lg:justify-start", {
               'bg-nav-focus border-r-4 border-orange-1': isActive
             })}>
               <Image

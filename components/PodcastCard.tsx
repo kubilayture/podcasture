@@ -5,13 +5,13 @@ const PodcastCard = ({
   description,
   imgUrl,
   title,
-  podcastId }:
-  {
-    imgUrl: string,
-    title: string,
-    description: string,
-    podcastId: number;
-  }) => {
+  podcastId
+}: {
+  imgUrl: string,
+  title: string,
+  description: string,
+  podcastId: number;
+}) => {
   return (
     <div className='cursor-pointer'>
       <figure className='flex flex-col gap-2'>
