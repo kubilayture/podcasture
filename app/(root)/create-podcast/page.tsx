@@ -81,7 +81,7 @@ const CreatePodcast = () => {
               name="podcastTitle"
               render={({ field }) => (
                 <FormItem className='flex flex-col gap-2.5'>
-                  <FormLabel className='text-16 font-bold text-white-1'>Username</FormLabel>
+                  <FormLabel className='text-16 font-bold text-white-1'>Title</FormLabel>
                   <FormControl>
                     <Input
                       className='input-class focus-visible:ring-offset-orange-1'
@@ -129,12 +129,13 @@ const CreatePodcast = () => {
             <GeneratePodcast
               setAudioStorageId={setAudioStorageId}
               setAudio={setAudioUrl}
-              voiceType={voiceType}
+              voiceType={voiceType!}
               audio={audioUrl}
               voicePrompt={voicePrompt}
               setVoicePrompt={setVoicePrompt}
               setAudioDuration={setAudioDuration}
             />
+
 
             <GenerateThumbnail />
 
