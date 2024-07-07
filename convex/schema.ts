@@ -25,7 +25,7 @@ export default defineSchema({
   users: defineTable({
     email: v.string(),
     imageUrl: v.string(),
-    clerkId: v.string(),
+    clerkId: v.optional(v.string()),
     name: v.string(),
   })
 });

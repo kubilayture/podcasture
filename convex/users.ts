@@ -3,7 +3,7 @@ import { ConvexError, v } from "convex/values";
 import { internalMutation, query } from "./_generated/server";
 
 export const getUserById = query({
-  args: { clerkId: v.string() },
+  args: { clerkId: v.optional(v.string()) },
   handler: async (ctx, args) => {
     const user = await ctx.db
       .query("users")
@@ -50,7 +50,7 @@ export const getTopUserByPodcastCount = query({
 
 export const createUser = internalMutation({
   args: {
-    clerkId: v.string(),
+    clerkId: v.optional(v.string()),
     email: v.string(),
     imageUrl: v.string(),
     name: v.string(),
@@ -67,7 +67,7 @@ export const createUser = internalMutation({
 
 export const updateUser = internalMutation({
   args: {
-    clerkId: v.string(),
+    clerkId: v.optional(v.string()),
     imageUrl: v.string(),
     email: v.string(),
   },
@@ -102,7 +102,7 @@ export const updateUser = internalMutation({
 });
 
 export const deleteUser = internalMutation({
-  args: { clerkId: v.string() },
+  args: { clerkId: v.optional(v.string()) },
   async handler(ctx, args) {
     const user = await ctx.db
       .query("users")
